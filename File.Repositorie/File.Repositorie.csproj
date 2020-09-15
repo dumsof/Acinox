@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.EntityFrameworkCore.Design.3.1.8\build\net461\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.8\build\net461\Microsoft.EntityFrameworkCore.Design.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>779fdac8-846d-469e-a425-fedc2e482abd</ProjectGuid>
+    <ProjectGuid>{779FDAC8-846D-469E-A425-FEDC2E482ABD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>File.Repositorie</RootNamespace>
@@ -12,6 +13,8 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,24 +34,589 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.13.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.13.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.3.1.8\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.8\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Design, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Design.3.1.8\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.3.1.8\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational.Design, Version=1.1.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.Design.1.1.6\lib\net451\Microsoft.EntityFrameworkCore.Relational.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.8\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFrameworkCore, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFrameworkCore.8.0.21\lib\netstandard2.0\MySql.Data.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFrameworkCore.Design, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFrameworkCore.Design.8.0.19\lib\net452\MySql.Data.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Console, Version=4.0.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.1\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.4.7.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.1\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.1\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DataAccess\Actividades.cs" />
+    <Compile Include="DataAccess\ActivosFijos.cs" />
+    <Compile Include="DataAccess\AfmovimientoActivn.cs" />
+    <Compile Include="DataAccess\AfmovimientoActivos.cs" />
+    <Compile Include="DataAccess\AftransaccionesActivn.cs" />
+    <Compile Include="DataAccess\AftransaccionesActivos.cs" />
+    <Compile Include="DataAccess\ArticulosDotacion.cs" />
+    <Compile Include="DataAccess\Asociaciones.cs" />
+    <Compile Include="DataAccess\AutoventaInvfisico.cs" />
+    <Compile Include="DataAccess\DbContext.cs" />
+    <Compile Include="DataAccess\BitacoraCartera.cs" />
+    <Compile Include="DataAccess\Bodegas.cs" />
+    <Compile Include="DataAccess\Cajas.cs" />
+    <Compile Include="DataAccess\Cargos.cs" />
+    <Compile Include="DataAccess\Categorias.cs" />
+    <Compile Include="DataAccess\CentroCosto.cs" />
+    <Compile Include="DataAccess\CentroOperacion.cs" />
+    <Compile Include="DataAccess\CgmovimientoContable.cs" />
+    <Compile Include="DataAccess\CgresumenBitacoraCartera.cs" />
+    <Compile Include="DataAccess\CgresumenComprasServicios.cs" />
+    <Compile Include="DataAccess\CgresumenCptoFeTercero.cs" />
+    <Compile Include="DataAccess\CgresumenCuentaCcosto.cs" />
+    <Compile Include="DataAccess\CgresumenCuentaTerc.cs" />
+    <Compile Include="DataAccess\CgresumenCxc.cs" />
+    <Compile Include="DataAccess\CgresumenCxp.cs" />
+    <Compile Include="DataAccess\CgresumenSxd.cs" />
+    <Compile Include="DataAccess\CgresumenVentasServicios.cs" />
+    <Compile Include="DataAccess\Ciudades.cs" />
+    <Compile Include="DataAccess\ClaseCliente.cs" />
+    <Compile Include="DataAccess\ClaseProveedor.cs" />
+    <Compile Include="DataAccess\Clientes.cs" />
+    <Compile Include="DataAccess\ClientesVarios.cs" />
+    <Compile Include="DataAccess\CmautoventaInvfisico.cs" />
+    <Compile Include="DataAccess\CmavancePptoCtrl.cs" />
+    <Compile Include="DataAccess\CmdoctoVentasAnu.cs" />
+    <Compile Include="DataAccess\CmdocumentoCompras.cs" />
+    <Compile Include="DataAccess\CmdocumentoVentas.cs" />
+    <Compile Include="DataAccess\CmencabezadoCompras.cs" />
+    <Compile Include="DataAccess\CmencabezadoVentas.cs" />
+    <Compile Include="DataAccess\CmencabezadoVentasAnu.cs" />
+    <Compile Include="DataAccess\CmestadisticoVentas.cs" />
+    <Compile Include="DataAccess\CmexistenciaSerial.cs" />
+    <Compile Include="DataAccess\CmhistoricosPdv.cs" />
+    <Compile Include="DataAccess\CmlistaDescuentosD.cs" />
+    <Compile Include="DataAccess\CmlistaPreciosD.cs" />
+    <Compile Include="DataAccess\CmmaestroCargues.cs" />
+    <Compile Include="DataAccess\CmmediosRecaudo.cs" />
+    <Compile Include="DataAccess\CmmovimientoBitacora.cs" />
+    <Compile Include="DataAccess\CmmovimientoCargues.cs" />
+    <Compile Include="DataAccess\CmmovimientoCompras.cs" />
+    <Compile Include="DataAccess\CmmovimientoCotizacion.cs" />
+    <Compile Include="DataAccess\CmmovimientoCotizCompras.cs" />
+    <Compile Include="DataAccess\CmmovimientoCp.cs" />
+    <Compile Include="DataAccess\CmmovimientoCsgRecibida.cs" />
+    <Compile Include="DataAccess\CmmovimientoEntregas.cs" />
+    <Compile Include="DataAccess\CmmovimientoInventario.cs" />
+    <Compile Include="DataAccess\CmmovimientoOcompra.cs" />
+    <Compile Include="DataAccess\CmmovimientoPdv.cs" />
+    <Compile Include="DataAccess\CmmovimientoPedidos.cs" />
+    <Compile Include="DataAccess\CmmovimientoPptoCtrl.cs" />
+    <Compile Include="DataAccess\CmmovimientoRequi.cs" />
+    <Compile Include="DataAccess\CmmovimientoScompra.cs" />
+    <Compile Include="DataAccess\CmmovimientoVentas.cs" />
+    <Compile Include="DataAccess\CmmvtoCarnet.cs" />
+    <Compile Include="DataAccess\CmmvtoDemandaNsatisf.cs" />
+    <Compile Include="DataAccess\CmpptoObraCtrlT1.cs" />
+    <Compile Include="DataAccess\CmpptoObraCtrlT2.cs" />
+    <Compile Include="DataAccess\CmpptoObraCtrlT3.cs" />
+    <Compile Include="DataAccess\CmpptoObraCtrlT4.cs" />
+    <Compile Include="DataAccess\CmpptoObraCtrlT5.cs" />
+    <Compile Include="DataAccess\CmrelacionPptoCtrl.cs" />
+    <Compile Include="DataAccess\CmresumenCarnet.cs" />
+    <Compile Include="DataAccess\CmresumenInventario.cs" />
+    <Compile Include="DataAccess\CmresumenInvUbicaLote.cs" />
+    <Compile Include="DataAccess\CmresumenPptoCtrl.cs" />
+    <Compile Include="DataAccess\CmvisitasRutven.cs" />
+    <Compile Include="DataAccess\CodBarras.cs" />
+    <Compile Include="DataAccess\CodigosConsolidacion.cs" />
+    <Compile Include="DataAccess\Conceptos.cs" />
+    <Compile Include="DataAccess\ConceptosNomina.cs" />
+    <Compile Include="DataAccess\ConsumosEntregasDeOps.cs" />
+    <Compile Include="DataAccess\Contratos.cs" />
+    <Compile Include="DataAccess\CptoFlujoCaja.cs" />
+    <Compile Include="DataAccess\CriteriosClaTerc1.cs" />
+    <Compile Include="DataAccess\CriteriosClaTerc2.cs" />
+    <Compile Include="DataAccess\CriteriosClaTerc3.cs" />
+    <Compile Include="DataAccess\CriteriosItm1.cs" />
+    <Compile Include="DataAccess\CriteriosItm2.cs" />
+    <Compile Include="DataAccess\CriteriosItm3.cs" />
+    <Compile Include="DataAccess\CriteriosItm4.cs" />
+    <Compile Include="DataAccess\CtasBancoTerc.cs" />
+    <Compile Include="DataAccess\CuentaBancaria.cs" />
+    <Compile Include="DataAccess\CuentasContab.cs" />
+    <Compile Include="DataAccess\CuentasEquiv.cs" />
+    <Compile Include="DataAccess\CuotasPrestamos.cs" />
+    <Compile Include="DataAccess\Curvas.cs" />
+    <Compile Include="DataAccess\Departamentos.cs" />
+    <Compile Include="DataAccess\Deportes.cs" />
+    <Compile Include="DataAccess\DescTecnicas.cs" />
+    <Compile Include="DataAccess\DocumentoCargues.cs" />
+    <Compile Include="DataAccess\DocumentoCompras.cs" />
+    <Compile Include="DataAccess\DocumentoVentas.cs" />
+    <Compile Include="DataAccess\DocumentoVentasAnu.cs" />
+    <Compile Include="DataAccess\Empresas.cs" />
+    <Compile Include="DataAccess\EncabezadoCompras.cs" />
+    <Compile Include="DataAccess\EncabezadoVentas.cs" />
+    <Compile Include="DataAccess\EncabezadoVentasAnu.cs" />
+    <Compile Include="DataAccess\Enfermedades.cs" />
+    <Compile Include="DataAccess\Entidades.cs" />
+    <Compile Include="DataAccess\EntregaDotacion.cs" />
+    <Compile Include="DataAccess\EquivaCausa.cs" />
+    <Compile Include="DataAccess\EquivaConsol.cs" />
+    <Compile Include="DataAccess\EquivaPila.cs" />
+    <Compile Include="DataAccess\EstadisticoVentas.cs" />
+    <Compile Include="DataAccess\ExistenciaSerial.cs" />
+    <Compile Include="DataAccess\ExperienciaLaboral.cs" />
+    <Compile Include="DataAccess\ExtrucPptoCtrl.cs" />
+    <Compile Include="DataAccess\Familiares.cs" />
+    <Compile Include="DataAccess\Fechas.cs" />
+    <Compile Include="DataAccess\FichasTecCli.cs" />
+    <Compile Include="DataAccess\GrupoBodegas.cs" />
+    <Compile Include="DataAccess\GrupoCcosto.cs" />
+    <Compile Include="DataAccess\GrupoContable.cs" />
+    <Compile Include="DataAccess\GrupoCOperacion.cs" />
+    <Compile Include="DataAccess\GrupoInventario.cs" />
+    <Compile Include="DataAccess\GrupoProyecto.cs" />
+    <Compile Include="DataAccess\GruposActivos.cs" />
+    <Compile Include="DataAccess\GruposContableAf.cs" />
+    <Compile Include="DataAccess\GrupoTercero.cs" />
+    <Compile Include="DataAccess\HistoricosPdv.cs" />
+    <Compile Include="DataAccess\HojasDeVida.cs" />
+    <Compile Include="DataAccess\Idiomas.cs" />
+    <Compile Include="DataAccess\Impuestos.cs" />
+    <Compile Include="DataAccess\InfAcademica.cs" />
+    <Compile Include="DataAccess\IngresoFamiliar.cs" />
+    <Compile Include="DataAccess\Items.cs" />
+    <Compile Include="DataAccess\Lineas.cs" />
+    <Compile Include="DataAccess\ListaDescuento.cs" />
+    <Compile Include="DataAccess\ListaDescuentosD.cs" />
+    <Compile Include="DataAccess\ListaPrecios.cs" />
+    <Compile Include="DataAccess\ListaPreciosD.cs" />
+    <Compile Include="DataAccess\ListaPreciosProvee.cs" />
+    <Compile Include="DataAccess\MetodoDepreciacion.cs" />
+    <Compile Include="DataAccess\Motivos.cs" />
+    <Compile Include="DataAccess\MotivosVarios.cs" />
+    <Compile Include="DataAccess\MovimientoActivn.cs" />
+    <Compile Include="DataAccess\MovimientoActivos.cs" />
+    <Compile Include="DataAccess\MovimientoAutoventas.cs" />
+    <Compile Include="DataAccess\MovimientoBitacora.cs" />
+    <Compile Include="DataAccess\MovimientoCargues.cs" />
+    <Compile Include="DataAccess\MovimientoCertifProv.cs" />
+    <Compile Include="DataAccess\MovimientoCompras.cs" />
+    <Compile Include="DataAccess\MovimientoContable.cs" />
+    <Compile Include="DataAccess\MovimientoCotizacion.cs" />
+    <Compile Include="DataAccess\MovimientoCotizCompras.cs" />
+    <Compile Include="DataAccess\MovimientoCsgRecibida.cs" />
+    <Compile Include="DataAccess\MovimientoEntregas.cs" />
+    <Compile Include="DataAccess\MovimientoInventario.cs" />
+    <Compile Include="DataAccess\MovimientoInvProcesos.cs" />
+    <Compile Include="DataAccess\MovimientoOcompra.cs" />
+    <Compile Include="DataAccess\MovimientoPdv.cs" />
+    <Compile Include="DataAccess\MovimientoPedidos.cs" />
+    <Compile Include="DataAccess\MovimientoPptoCtrl.cs" />
+    <Compile Include="DataAccess\MovimientoRequi.cs" />
+    <Compile Include="DataAccess\MovimientoScompra.cs" />
+    <Compile Include="DataAccess\MovimientoVentas.cs" />
+    <Compile Include="DataAccess\MovimientoVentasAutoventas.cs" />
+    <Compile Include="DataAccess\MvtoCarnet.cs" />
+    <Compile Include="DataAccess\MvtoDemandaNsatisf.cs" />
+    <Compile Include="DataAccess\Nmafc.cs" />
+    <Compile Include="DataAccess\Nmafp.cs" />
+    <Compile Include="DataAccess\Nmarp.cs" />
+    <Compile Include="DataAccess\Nmcateg.cs" />
+    <Compile Include="DataAccess\Nmccf.cs" />
+    <Compile Include="DataAccess\NmcuotasPrestamos.cs" />
+    <Compile Include="DataAccess\Nmempleados.cs" />
+    <Compile Include="DataAccess\Nmeps.cs" />
+    <Compile Include="DataAccess\Nmitems.cs" />
+    <Compile Include="DataAccess\NmresumenAutoliquidacion.cs" />
+    <Compile Include="DataAccess\NmresumenPagosNomina.cs" />
+    <Compile Include="DataAccess\NmresumenVlrsConsolidados.cs" />
+    <Compile Include="DataAccess\OrigenDestino.cs" />
+    <Compile Include="DataAccess\OtrosDatosBasicos.cs" />
+    <Compile Include="DataAccess\Paises.cs" />
+    <Compile Include="DataAccess\ParientesEmpresa.cs" />
+    <Compile Include="DataAccess\PptoObraCtrlT1.cs" />
+    <Compile Include="DataAccess\PptoObraCtrlT2.cs" />
+    <Compile Include="DataAccess\Profesiones.cs" />
+    <Compile Include="DataAccess\Proveedores.cs" />
+    <Compile Include="DataAccess\Proyectos.cs" />
+    <Compile Include="DataAccess\PuntoEnvio.cs" />
+    <Compile Include="DataAccess\RangosCxc.cs" />
+    <Compile Include="DataAccess\RangosCxp.cs" />
+    <Compile Include="DataAccess\RangosSxd.cs" />
+    <Compile Include="DataAccess\Referencias.cs" />
+    <Compile Include="DataAccess\ResumenAutoliquidacion.cs" />
+    <Compile Include="DataAccess\ResumenCarnet.cs" />
+    <Compile Include="DataAccess\ResumenComprasServicios.cs" />
+    <Compile Include="DataAccess\ResumenCptoFeTercero.cs" />
+    <Compile Include="DataAccess\ResumenCuentaCcosto.cs" />
+    <Compile Include="DataAccess\ResumenCuentaTerc.cs" />
+    <Compile Include="DataAccess\ResumenCxc.cs" />
+    <Compile Include="DataAccess\ResumenCxp.cs" />
+    <Compile Include="DataAccess\ResumenInventario.cs" />
+    <Compile Include="DataAccess\ResumenInvUbicaLote.cs" />
+    <Compile Include="DataAccess\ResumenPagosNomina.cs" />
+    <Compile Include="DataAccess\ResumenPagosNominaBi.cs" />
+    <Compile Include="DataAccess\ResumenPptoCtrl.cs" />
+    <Compile Include="DataAccess\ResumenSxd.cs" />
+    <Compile Include="DataAccess\ResumenVentasServicios.cs" />
+    <Compile Include="DataAccess\ResumenVlrsConsolidados.cs" />
+    <Compile Include="DataAccess\Servicios.cs" />
+    <Compile Include="DataAccess\ServicioSalud.cs" />
+    <Compile Include="DataAccess\TarjetaCredito.cs" />
+    <Compile Include="DataAccess\TblEqCausa.cs" />
+    <Compile Include="DataAccess\TblEqConsol.cs" />
+    <Compile Include="DataAccess\TblEqPila.cs" />
+    <Compile Include="DataAccess\Terceros.cs" />
+    <Compile Include="DataAccess\TipoCtas.cs" />
+    <Compile Include="DataAccess\TipoRegimen.cs" />
+    <Compile Include="DataAccess\TiposDeNomina.cs" />
+    <Compile Include="DataAccess\TiposDocumentos.cs" />
+    <Compile Include="DataAccess\TransaccionesActivn.cs" />
+    <Compile Include="DataAccess\TransaccionesActivos.cs" />
+    <Compile Include="DataAccess\UbicacionAf.cs" />
+    <Compile Include="DataAccess\UbicacionNm.cs" />
+    <Compile Include="DataAccess\UnidadesEmpAdic.cs" />
+    <Compile Include="DataAccess\UnidadNegocio.cs" />
+    <Compile Include="DataAccess\Usuarios.cs" />
+    <Compile Include="DataAccess\VCcosto1.cs" />
+    <Compile Include="DataAccess\VCcosto2.cs" />
+    <Compile Include="DataAccess\VCcosto3.cs" />
+    <Compile Include="DataAccess\VCcosto4.cs" />
+    <Compile Include="DataAccess\VCcosto5.cs" />
+    <Compile Include="DataAccess\VCcosto6.cs" />
+    <Compile Include="DataAccess\VCcosto7.cs" />
+    <Compile Include="DataAccess\VCcosto8.cs" />
+    <Compile Include="DataAccess\VClasecli1.cs" />
+    <Compile Include="DataAccess\VClasecli2.cs" />
+    <Compile Include="DataAccess\VClasecli3.cs" />
+    <Compile Include="DataAccess\VClasepro1.cs" />
+    <Compile Include="DataAccess\VClasepro2.cs" />
+    <Compile Include="DataAccess\VClasepro3.cs" />
+    <Compile Include="DataAccess\VCodBarras.cs" />
+    <Compile Include="DataAccess\Vcontratos.cs" />
+    <Compile Include="DataAccess\VCuenta1.cs" />
+    <Compile Include="DataAccess\VCuenta2.cs" />
+    <Compile Include="DataAccess\VCuenta3.cs" />
+    <Compile Include="DataAccess\VCuenta4.cs" />
+    <Compile Include="DataAccess\VCuenta5.cs" />
+    <Compile Include="DataAccess\VCuenta6.cs" />
+    <Compile Include="DataAccess\VCuenta7.cs" />
+    <Compile Include="DataAccess\VCuentaEq1.cs" />
+    <Compile Include="DataAccess\VCuentaEq2.cs" />
+    <Compile Include="DataAccess\VCuentaEq3.cs" />
+    <Compile Include="DataAccess\VCuentaEq4.cs" />
+    <Compile Include="DataAccess\VCuentaEq5.cs" />
+    <Compile Include="DataAccess\VCuentaEq6.cs" />
+    <Compile Include="DataAccess\VCuentaEq7.cs" />
+    <Compile Include="DataAccess\VDescTecnicas.cs" />
+    <Compile Include="DataAccess\Vehiculo.cs" />
+    <Compile Include="DataAccess\Vendedores.cs" />
+    <Compile Include="DataAccess\VGrupo1.cs" />
+    <Compile Include="DataAccess\VGrupo16.cs" />
+    <Compile Include="DataAccess\VGrupo2.cs" />
+    <Compile Include="DataAccess\VGrupo36.cs" />
+    <Compile Include="DataAccess\VGrupo56.cs" />
+    <Compile Include="DataAccess\VisitasRutven.cs" />
+    <Compile Include="DataAccess\Vivienda.cs" />
+    <Compile Include="DataAccess\VLinea1.cs" />
+    <Compile Include="DataAccess\VLinea16.cs" />
+    <Compile Include="DataAccess\VLinea2.cs" />
+    <Compile Include="DataAccess\VLinea36.cs" />
+    <Compile Include="DataAccess\VLinea56.cs" />
+    <Compile Include="DataAccess\VServicioC.cs" />
+    <Compile Include="DataAccess\VServicioV.cs" />
+    <Compile Include="DataAccess\VTerceros.cs" />
+    <Compile Include="DataAccess\VZona1.cs" />
+    <Compile Include="DataAccess\VZona2.cs" />
+    <Compile Include="DataAccess\ZonasSubzona.cs" />
+    <Compile Include="IRepositorie\IRepositorieSocietie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorie\RepositorieSocietie.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="EF.Reverse.POCO.v3.ttinclude" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\File.Entities\File.Entities.csproj">
+      <Project>{ed83f844-dc52-41e6-bdda-2515fe0df2c9}</Project>
+      <Name>File.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.8\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.3.1.8\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+</Project>
